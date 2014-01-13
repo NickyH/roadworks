@@ -28,12 +28,10 @@ body {
 }
 
 #map {
-  height: 400px;
-  width: 80%;
-  position: relative;
-  top: 120;
-  left: 200;
+  height: 500px;
+  width: auto;
   margin-left: 50px;
+  margin-right: 50px;
 }
 
 .hidden {
@@ -50,7 +48,7 @@ body {
   margin: 0;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 10003;
   border-bottom: 1px solid darken(@grey-medium, 10%);
 }
 
@@ -159,7 +157,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
-  z-index: 4;
+  z-index: 10004;
   border-right: 1px solid darken(@left-bar-colour, 20%);
   .powered {
     position: absolute;
@@ -509,7 +507,7 @@ body {
   top: 100px;
   right: 0;
   background-color: @background-main;
-  z-index: 3;
+  z-index: 10003;
     .form-button {
     float: right;
     height: 40px;
