@@ -148,16 +148,16 @@
               </div>
 
               <form class="form-horizontal container left-aligned" role="form">
-                <label class="col-sm-3 control-label">Activity</label>
-                <label class="col-sm-5 control-label">Treatment/Requirements</label>
-                <label class="col-sm-4 control-label">Comments</label>
+                <label class="col-sm-3 control-label form-table-header">Activity</label>
+                <label class="col-sm-5 control-label form-table-header">Treatment/Requirements</label>
+                <label class="col-sm-4 control-label form-table-header">Comments</label>
 
                 <div class="form-group">
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Advance Notice
                         </a>
                       </li>
@@ -178,8 +178,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Asphalt
                         </a>
                       </li>
@@ -197,8 +197,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Spray Seal
                         </a>
                       </li>
@@ -216,8 +216,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Profiling
                         </a>
                       </li>
@@ -241,8 +241,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Civils
                         </a>
                       </li>
@@ -263,8 +263,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Line Marking
                         </a>
                       </li>
@@ -285,8 +285,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Topstones
                         </a>
                       </li>
@@ -304,8 +304,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Other
                         </a>
                       </li>
@@ -323,8 +323,8 @@
                   <div class="col-sm-3">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#">
-                          <span class="badge pull-right">t</span>
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
                           Incomplete Council Actvs
                         </a>
                       </li>
@@ -394,9 +394,6 @@
 
 
 <script src="../Scripts/js/forms.js"></script>
-<!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
-<script src="../leafletdraw/leaflet.draw.js"></script>
-<script src="../leafletdraw/draw/handler/Draw.Polyline.js"></script> -->
 
 <script>
 
@@ -433,6 +430,9 @@
   map.on('draw:editstop', function () {
     console.log('edit stop');
   });
+
+  $('.pill-select').on('click', toggle_rw_select);
+
 
   // $('.form-container').on('DOMMouseScroll mousewheel', get_inspection_page_position);
   // $('.form-container').bind('swipemove',get_inspection_page_position);

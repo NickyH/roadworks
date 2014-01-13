@@ -20,6 +20,18 @@ $(function(){
   $('.category-checkbox').on('click', uncheck_all_others);
 });
 
+function toggle_rw_select() {
+  event.preventDefault();
+  $(this).toggleClass('inactive');
+
+  if($(this).hasClass('inactive')) {
+    $(this).children('.pull-right').html('&#10008');
+    }
+  else {
+    $(this).children('.pull-right').html('&#10004');
+  }
+}
+
 function refresh_history_accordion() {
   event.preventDefault();
   $('.history-tree-wrapper').removeClass('invisible');

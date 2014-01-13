@@ -426,6 +426,21 @@ body {
 .left-aligned {
   .control-label {
     text-align: left !important;
+    &.form-table-header {
+      margin-bottom: 15px;
+      font-size: 14px;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+li.active {
+  a.pill-select {
+    &.inactive {
+      background-color: @white-medium;
+      color: black;
+      border: 1px solid @grey-medium;
+    }
   }
 }
 
