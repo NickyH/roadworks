@@ -248,6 +248,30 @@ function get_inspection_page_position() {
   }
 }
 
+function get_rw1_page_position() {
+  var description = $('#bookmark_description').offset().top;
+  var activities = $('#bookmark_activities').offset().top;
+  var documents = $('#bookmark_documents').offset().top;
+  var siteplan = $('#bookmark_siteplan').offset().top;
+  var map = $('#bookmark_map').offset().top;
+
+  if ($(window).scrollTop() >= (description - topOffset -50) ) {
+    oval_border_highlight('#tab1');
+  }
+  if ($(window).scrollTop() >= (activities - topOffset -50 ) ) {
+    oval_border_highlight('#tab2');
+  }
+  if ($(window).scrollTop() >= (documents - topOffset -50) ) {
+    oval_border_highlight('#tab3');
+  }
+  if ($(window).scrollTop() >= (siteplan - topOffset -50) ) {
+    oval_border_highlight('#tab4');
+  }
+  if ($(window).scrollTop() >= (map - topOffset -50) ) {
+    oval_border_highlight('#tab5');
+  }
+}
+
 function get_task_page_position() {
   var taskdetails = $('#bookmark_taskdetails').offset().top;
   var extdetails = $('#bookmark_extdetails').offset().top;
@@ -414,62 +438,30 @@ function layer_active_clicked() {
 function goto_forms() {
   form_navbar();
   $('#insert-map').empty();
-  $.get('forms/form_cr.html', function(data) {
+  $.get('forms/form_rw1.html', function(data) {
     $('#insert-form').html(data);
     });
   $('#insert-form').trigger('create');
-  var formName = 'request'
+  var formName = 'rw1'
   show_correct_ovals(formName);
 }
 
-function insert_inspection_form() {
+function insert_rw1_form() {
   $('#insert-form').empty();
-  $.get('forms/form_inspect.html', function(data) {
+  $.get('forms/form_rw1.html', function(data) {
     $('#insert-form').html(data);
     });
-  var formName = 'inspection'
-  show_correct_ovals(formName);
-  // $('html body').animate({ scrollTop: 0 });
-  $('#insert-form').on('change', skip_to_details);
-}
-
-function insert_CR_form() {
-  $('#insert-form').empty();
-  $.get('forms/form_cr.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  var formName = 'request'
-  show_correct_ovals(formName);
-  // $('html body').animate({ scrollTop: 0 });
-  $('#insert-form').on('change', skip_to_details);
-}
-
-function insert_defect_form() {
-  $('#insert-form').empty();
-  $.get('forms/form_defect.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  var formName = 'defect'
+  var formName = 'rw1'
   show_correct_ovals(formName);
   $('html body').animate({ scrollTop: 0 });
 }
 
-function insert_task_form() {
+function insert_rw2_form() {
   $('#insert-form').empty();
-  $.get('forms/form_task.html', function(data) {
+  $.get('forms/form_rw2.html', function(data) {
     $('#insert-form').html(data);
-  });
-  var formName = 'task'
-  show_correct_ovals(formName);
-  $('html body').animate({ scrollTop: 0 });
-}
-
-function insert_timesheet_form() {
-  $('#insert-form').empty();
-  $.get('forms/form_timesheet.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  var formName = 'timesheet'
+    });
+  var formName = 'rw2'
   show_correct_ovals(formName);
   $('html body').animate({ scrollTop: 0 });
 }
@@ -504,112 +496,15 @@ function form_navbar() {
 }
 
 function show_correct_ovals(formName) {
-  if (formName === 'request') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-
-    $('a[data-href="#bookmark_contact"]').parent('li').show();
+  if (formName === 'rw1') {
     $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'defect') {
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-
-    $('a[data-href="#bookmark_condition"]').parent('li').show();
-    $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'inspection') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').show();
-
-    $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'task') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-    $('a[data-href="#bookmark_location"]').parent('li').hide();
-    $('a[data-href="#bookmark_details"]').parent('li').hide();
-    $('a[data-href="#bookmark_notes"]').parent('li').hide();
-    $('a[data-href="#bookmark_closeout"]').parent('li').hide();
-    hide_timesheet_ovals();
-    show_task_ovals();
-  }
-  if (formName === 'timesheet') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-    $('a[data-href="#bookmark_location"]').parent('li').hide();
-    $('a[data-href="#bookmark_details"]').parent('li').hide();
-    $('a[data-href="#bookmark_notes"]').parent('li').hide();
-    $('a[data-href="#bookmark_closeout"]').parent('li').hide();
-    show_timesheet_ovals();
-    hide_task_ovals();
+    $('a[data-href="#bookmark_activities"]').parent('li').show();
+    $('a[data-href="#bookmark_documents"]').parent('li').show();
+    $('a[data-href="#bookmark_siteplan"]').parent('li').show();
+    $('a[data-href="#bookmark_map"]').parent('li').show();
   }
 }
 
-function hide_task_ovals() {
-  $('a[data-href="#bookmark_taskdetails"]').parent('li').hide();
-  $('a[data-href="#bookmark_extdetails"]').parent('li').hide();
-  $('a[data-href="#bookmark_loe"]').parent('li').hide();
-  $('a[data-href="#bookmark_wip"]').parent('li').hide();
-  $('a[data-href="#bookmark_traffic"]').parent('li').hide();
-  $('a[data-href="#bookmark_tasknotes"]').parent('li').hide();
-}
-
-function show_task_ovals() {
-  $('a[data-href="#bookmark_taskdetails"]').parent('li').show();
-  $('a[data-href="#bookmark_extdetails"]').parent('li').show();
-  $('a[data-href="#bookmark_loe"]').parent('li').show();
-  $('a[data-href="#bookmark_wip"]').parent('li').show();
-  $('a[data-href="#bookmark_traffic"]').parent('li').show();
-  $('a[data-href="#bookmark_tasknotes"]').parent('li').show();
-}
-
-function show_timesheet_ovals() {
-  $('a[data-href="#bookmark_start"]').parent('li').show();
-  $('a[data-href="#bookmark_work"]').parent('li').show();
-  $('a[data-href="#bookmark_breaks"]').parent('li').show();
-  $('a[data-href="#bookmark_end"]').parent('li').show();
-  $('a[data-href="#bookmark_review"]').parent('li').show();
-}
-
-function hide_timesheet_ovals() {
-  $('a[data-href="#bookmark_start"]').parent('li').hide();
-  $('a[data-href="#bookmark_work"]').parent('li').hide();
-  $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-  $('a[data-href="#bookmark_end"]').parent('li').hide();
-  $('a[data-href="#bookmark_review"]').parent('li').hide();
-}
 
 function show_fake_map() {
   $('#mapstatic').attr('src', "Content/images/OsmMap_Feature.png")
