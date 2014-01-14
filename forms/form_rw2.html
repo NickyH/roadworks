@@ -158,11 +158,10 @@
                 <label class="col-sm-12 control-label form-table-header">Select if Practical Completion has been reached</label>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
+                  <div class="col-sm-12">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#" class="pill-select inactive">
+                        <a href="#" class="pill-select inactive" id="select-cert">
                           <span class="badge pull-right">&#10008</span>
                           Certificate of Practical Completion
                         </a>
@@ -173,26 +172,26 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Name</label>
                   <div class="col-sm-8">
-                    <input class="form-control"></input>
+                    <input class="form-control cert" disabled></input>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Superintendent</label>
                   <div class="col-sm-8">
-                    <input class="form-control"></input>
+                    <input class="form-control cert" disabled></input>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Signed</label>
                   <div class="col-sm-8">
-                    <input class="form-control"></input>
+                    <input class="form-control cert" disabled></input>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Date</label>
                   <div class="col-sm-8">
                     <div class="input-group merged">
-                      <input type="text" class="form-control insert-date-picker" />
+                      <input type="text" class="form-control insert-date-picker cert" disabled />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -222,11 +221,10 @@
                 <label class="col-sm-12 control-label form-table-header">Select if Practical Completion not reached</label>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
+                  <div class="col-sm-12">
                     <ul class="nav nav-pills nav-stacked">
                       <li class="active">
-                        <a href="#" class="pill-select inactive">
+                        <a href="#" class="pill-select inactive" id="select-notice">
                           <span class="badge pull-right">&#10008</span>
                           Notice Practical Completion Not Reached
                         </a>
@@ -237,20 +235,20 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Name</label>
                   <div class="col-sm-8">
-                    <input class="form-control"></input>
+                    <input class="form-control notice" disabled></input>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Signed</label>
                   <div class="col-sm-8">
-                    <input class="form-control"></input>
+                    <input class="form-control notice" disabled></input>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Date</label>
                   <div class="col-sm-8">
                     <div class="input-group merged">
-                      <input type="text" class="form-control insert-date-picker" />
+                      <input type="text" class="form-control insert-date-picker notice" disabled />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -260,7 +258,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label">Reason</label>
                   <div class="col-sm-8">
-                    <select class="selectpicker form-control show-tick" title=''>
+                    <select class="selectpicker form-control show-tick notice" title='' disabled>
                       <option>Minor Omissions & Defects</option>
                       <option>Other (list below)</option>
                     </select>
@@ -269,7 +267,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label"></label>
                   <div class="col-sm-8">
-                    <textarea class="form-control" placeholder="Specify reason if 'other'"></textarea>
+                    <textarea class="form-control notice" placeholder="Specify reason if 'other'" disabled></textarea>
                   </div>
                 </div>
 
@@ -291,6 +289,7 @@
 
 <script src="../Scripts/js/forms.js"></script>
 <script>
+  $('.pill-select').on('click', toggle_rw_select);
   $('.form-container').on('DOMMouseScroll mousewheel', get_rw2_page_position);
   $('.form-container').bind('swipemove',get_rw2_page_position);
 </script>
