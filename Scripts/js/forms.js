@@ -5,7 +5,6 @@ $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
 $('#bookmark-nav').on('click', 'a', check_form_location);
-$('.referral-icon').on('click', toggle_referral);
 
 change_selectpicker_values()
 
