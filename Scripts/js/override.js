@@ -385,7 +385,7 @@ function form_navbar() {
 
 function show_correct_ovals(formName) {
   if (formName === 'rw1') {
-    $('a[data-href="#bookmark_details"]').parent('li').show();
+    $('a[data-href="#bookmark_description"]').parent('li').show();
     $('a[data-href="#bookmark_activities"]').parent('li').show();
     $('a[data-href="#bookmark_documents"]').parent('li').show();
     $('a[data-href="#bookmark_siteplan"]').parent('li').show();
