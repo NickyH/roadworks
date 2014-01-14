@@ -78,7 +78,7 @@
               <!-- numbered circle in each form panel-->
               <div class="text-circle">
                 <div class="text-in-circle">
-                  Desription
+                  Summary
                 </div>
               </div>
 
@@ -139,7 +139,7 @@
     <!-- end form row 1 -->
 
     <!-- form row 2 -->
-    <div class="row" id="bookmark_certificate">
+    <div class="row" id="bookmark_signoff">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -155,42 +155,51 @@
               </div>
 
               <form class="form-horizontal container" role="form">
+                <label class="col-sm-12 control-label form-table-header">Select if Practical Completion has been reached</label>
+
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Client</label>
+                  <label class="col-sm-4 control-label"></label>
                   <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
+                    <ul class="nav nav-pills nav-stacked">
+                      <li class="active">
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
+                          Certificate of Practical Completion
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Client Superintendent</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Street Name</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Suburb</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">From</label>
+                  <label class="col-sm-4 control-label">Name</label>
                   <div class="col-sm-8">
                     <input class="form-control"></input>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">To</label>
+                  <label class="col-sm-4 control-label">Superintendent</label>
                   <div class="col-sm-8">
                     <input class="form-control"></input>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Signed</label>
+                  <div class="col-sm-8">
+                    <input class="form-control"></input>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Date</label>
+                  <div class="col-sm-8">
+                    <div class="input-group merged">
+                      <input type="text" class="form-control insert-date-picker" />
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 <span class="glyphicon insert-cross-icon"></span>
               </form>
 
@@ -205,51 +214,62 @@
               <!-- numbered circle in each form panel-->
               <div class="text-circle">
                 <div class="text-in-circle">
-                  Desription
+                  Notice
                 </div>
               </div>
 
               <form class="form-horizontal container" role="form">
+                <label class="col-sm-12 control-label form-table-header">Select if Practical Completion not reached</label>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Treatment Undertaken</label>
+                  <label class="col-sm-4 control-label"></label>
                   <div class="col-sm-8">
-                    <select class="selectpicker form-control show-tick" multiple title='' data-required="true">
-                      <option>Asphalt</option>
-                      <option>Spray Seal</option>
-                      <option>Profiling</option>
-                      <option>Top Stones</option>
-                      <option>Other (specify below)</option>
-                    </select>
+                    <ul class="nav nav-pills nav-stacked">
+                      <li class="active">
+                        <a href="#" class="pill-select inactive">
+                          <span class="badge pull-right">&#10008</span>
+                          Notice Practical Completion Not Reached
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Specify if Other</label>
+                  <label class="col-sm-4 control-label">Name</label>
                   <div class="col-sm-8">
                     <input class="form-control"></input>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Request Date</label>
+                  <label class="col-sm-4 control-label">Signed</label>
+                  <div class="col-sm-8">
+                    <input class="form-control"></input>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Date</label>
                   <div class="col-sm-8">
                     <div class="input-group merged">
-                      <input type="text" class="form-control insert-date-picker" data-required="true" />
+                      <input type="text" class="form-control insert-date-picker" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
                     </div>
                   </div>
                 </div>
-
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Request Time</label>
+                  <label class="col-sm-4 control-label">Reason</label>
                   <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" data-required="true" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
+                    <select class="selectpicker form-control show-tick" title=''>
+                      <option>Minor Omissions & Defects</option>
+                      <option>Other (list below)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"></label>
+                  <div class="col-sm-8">
+                    <textarea class="form-control" placeholder="Specify reason if 'other'"></textarea>
                   </div>
                 </div>
 
@@ -264,134 +284,6 @@
       </div>
     </div>
     <!-- end form row 2 -->
-
-    <!-- form row 3 -->
-    <div class="row" id="bookmark_notice">
-      <div class="col-12">
-        <div class="row-fluid">
-
-          <!-- form panel 1 -->
-          <div class="col-lg-6 col-md-6 col-sm-12">
-
-            <div class="form-panel">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Notice
-                </div>
-              </div>
-
-              <form class="form-horizontal container" role="form">
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Client</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Client Superintendent</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Street Name</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Suburb</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" data-required="true"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">From</label>
-                  <div class="col-sm-8">
-                    <input class="form-control"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">To</label>
-                  <div class="col-sm-8">
-                    <input class="form-control"></input>
-                  </div>
-                </div>
-                <span class="glyphicon insert-cross-icon"></span>
-              </form>
-
-            </div>
-          </div>
-          <!-- end form panel 1 -->
-
-          <!-- form panel 2 -->
-          <div class="col-lg-6 col-md-6 col-sm-12">
-
-            <div class="form-panel">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Desription
-                </div>
-              </div>
-
-              <form class="form-horizontal container" role="form">
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Treatment Undertaken</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control show-tick" multiple title='' data-required="true">
-                      <option>Asphalt</option>
-                      <option>Spray Seal</option>
-                      <option>Profiling</option>
-                      <option>Top Stones</option>
-                      <option>Other (specify below)</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Specify if Other</label>
-                  <div class="col-sm-8">
-                    <input class="form-control"></input>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Request Date</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-date-picker" data-required="true" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Request Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" data-required="true" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <span class="glyphicon insert-cross-icon"></span>
-              </form>
-
-            </div>
-          </div>
-          <!-- end form panel 2 -->
-
-        </div>
-      </div>
-    </div>
-    <!-- end form row 3 -->
-
 
   </div> <!-- end form container -->
 </div>

@@ -206,17 +206,14 @@ function get_rw1_page_position() {
 
 function get_rw2_page_position() {
   var summary = $('#bookmark_summary').offset().top;
-  var certificate = $('#bookmark_certificate').offset().top;
+  var signoff = $('#bookmark_signoff').offset().top;
   var notice = $('#bookmark_notice').offset().top;
 
   if ($(window).scrollTop() >= (summary - topOffset -50) ) {
     oval_border_highlight('#tab10');
   }
-  if ($(window).scrollTop() >= (certificate - topOffset -50 ) ) {
+  if ($(window).scrollTop() >= (signoff - topOffset -50 ) ) {
     oval_border_highlight('#tab11');
-  }
-  if ($(window).scrollTop() >= (notice - topOffset -50) ) {
-    oval_border_highlight('#tab12');
   }
 }
 
@@ -392,13 +389,11 @@ function show_correct_ovals(formName) {
     $('a[data-href="#bookmark_map"]').parent('li').show();
 
     $('a[data-href="#bookmark_summary"]').parent('li').hide();
-    $('a[data-href="#bookmark_certificate"]').parent('li').hide();
-    $('a[data-href="#bookmark_notice"]').parent('li').hide();
+    $('a[data-href="#bookmark_signoff"]').parent('li').hide();
   }
   if (formName === 'rw2') {
     $('a[data-href="#bookmark_summary"]').parent('li').show();
-    $('a[data-href="#bookmark_certificate"]').parent('li').show();
-    $('a[data-href="#bookmark_notice"]').parent('li').show();
+    $('a[data-href="#bookmark_signoff"]').parent('li').show();
 
     $('a[data-href="#bookmark_description"]').parent('li').hide();
     $('a[data-href="#bookmark_activities"]').parent('li').hide();
@@ -449,15 +444,10 @@ function check_form_location() {
       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
       oval_border_highlight('#tab10');
     }
-    if (href === '#bookmark_certificate') {
+    if (href === '#bookmark_signoff') {
       var scrollAmount = ($(href).offset().top) - topOffset;
       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
       oval_border_highlight('#tab11');
-    }
-    if (href === '#bookmark_notice') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab12');
     }
   }
 }
