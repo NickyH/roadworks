@@ -26,7 +26,7 @@ function toggle_rw_select() {
 
   if($(this).hasClass('inactive')) {
     $(this).children('.pull-right').html('&#10008');
-
+    disable_fields($(this));
     if ($(this).attr('id') === 'select-cert') {
       deselect_cert();
     }
@@ -37,6 +37,7 @@ function toggle_rw_select() {
 
   else {
     $(this).children('.pull-right').html('&#10004');
+    enable_fields($(this));
 
     if ($(this).attr('id') === 'select-cert') {
     select_cert();
@@ -45,6 +46,18 @@ function toggle_rw_select() {
       select_notice();
     }
   }
+}
+
+function enable_fields(group) {
+  var row = $(group).parents('.form-group');
+  $(row).children().find('.form-control').removeAttr('disabled');
+  $(row).children().find('.selectpicker').removeClass('disabled');
+}
+
+function disable_fields(group) {
+  var row = $(group).parents('.form-group');
+  $(row).children().find('.form-control').attr('disabled', 'disabled');
+  $(row).children().find('.selectpicker').addClass('disabled');
 }
 
 function select_cert() {
