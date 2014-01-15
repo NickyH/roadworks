@@ -41,9 +41,11 @@ function toggle_rw_select() {
 
     if ($(this).attr('id') === 'select-cert') {
     select_cert();
+    deselect_notice();
     }
     if ($(this).attr('id') === 'select-notice') {
       select_notice();
+      deselect_cert();
     }
   }
 }
@@ -67,6 +69,9 @@ function select_cert() {
   $('#select-notice .pull-right').html('&#10008');
   $('.cert .selectpicker').removeClass('disabled');
   $('.cert .selectpicker li').removeClass('disabled');
+
+  $('#select-cert-date').removeAttr('disabled');
+  $('#select-cert-date').datepicker("option", { disabled: false } );
 }
 
 function select_notice() {
@@ -76,14 +81,22 @@ function select_notice() {
   $('#select-cert .pull-right').html('&#10008');
   $('.notice .selectpicker').removeClass('disabled');
   $('.notice .selectpicker li').removeClass('disabled');
+
+  $('#select-notice-date').removeAttr('disabled');
+  $('#select-notice-date').datepicker("option", { disabled: false } );
 }
 
 function deselect_cert() {
   $('.cert').attr('disabled', 'disabled');
+  $('#select-cert-date').attr('disabled', 'disabled');
+  $('#select-cert-date').datepicker("option", { disabled: true } );
 }
 
 function deselect_notice() {
   $('.notice').attr('disabled', 'disabled');
+  $('#select-notice-date').attr('disabled', 'disabled');
+  $('#select-notice-date').datepicker("option", { disabled: true } );
+  console.log($('#select-notice-date').datepicker('isDisabled'));
 }
 
 function refresh_history_accordion() {
