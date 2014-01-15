@@ -51,12 +51,16 @@ function select_cert() {
   $('.cert').removeAttr('disabled');
   $('.notice').attr('disabled', 'disabled');
   $('#select-notice').addClass('inactive');
+  $('.cert .selectpicker').removeClass('disabled');
+  $('.cert .selectpicker li').removeClass('disabled');
 }
 
 function select_notice() {
   $('.notice').removeAttr('disabled');
   $('.cert').attr('disabled', 'disabled');
   $('#select-cert').addClass('inactive');
+  $('.notice .selectpicker').removeClass('disabled');
+  $('.notice .selectpicker li').removeClass('disabled');
 }
 
 function deselect_cert() {
