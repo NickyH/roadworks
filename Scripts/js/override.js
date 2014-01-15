@@ -64,6 +64,7 @@ function select_cert() {
   $('.cert').removeAttr('disabled');
   $('.notice').attr('disabled', 'disabled');
   $('#select-notice').addClass('inactive');
+  $('#select-notice .pull-right').html('&#10008');
   $('.cert .selectpicker').removeClass('disabled');
   $('.cert .selectpicker li').removeClass('disabled');
 }
@@ -72,6 +73,7 @@ function select_notice() {
   $('.notice').removeAttr('disabled');
   $('.cert').attr('disabled', 'disabled');
   $('#select-cert').addClass('inactive');
+  $('#select-cert .pull-right').html('&#10008');
   $('.notice .selectpicker').removeClass('disabled');
   $('.notice .selectpicker li').removeClass('disabled');
 }
