@@ -469,7 +469,7 @@
                   </div>
                 </div>
 
-                <div class="form-group underline filename" id="new-attach">
+                <div class="form-group underline filename">
                   <div class="col-sm-5">
                     <label class="col-sm-6 control-label filename-text">No files added</label>
                     <label class="col-sm-1 control-label filename-delete"></label>
@@ -480,7 +480,7 @@
                   </div>
                 </div>
 
-                <div class="form-group underline">
+                <div class="form-group">
                   <div class="col-sm-5">
                     <label class="col-sm-7 control-label">Worksite Hazard ID & Risk Assessment</label>
                     <div class="col-sm-5">
@@ -499,6 +499,17 @@
                   </div>
                   <div class="col-sm-2">
                     <input type="checkbox" class="form-control" name="rw1-4"></input>
+                  </div>
+                </div>
+
+                <div class="form-group underline filename">
+                  <div class="col-sm-5">
+                    <label class="col-sm-6 control-label filename-text">No files added</label>
+                    <label class="col-sm-1 control-label filename-delete"></label>
+                    <div class="col-sm-5">
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
                   </div>
                 </div>
 
@@ -544,7 +555,7 @@
                   </div>
                 </div>
 
-                <div class="form-group underline">
+                <div class="form-group">
                   <div class="col-sm-5">
                     <label class="col-sm-7 control-label">Line Marking Plan</label>
                     <div class="col-sm-5">
@@ -560,6 +571,17 @@
                   </div>
                   <div class="col-sm-2">
                     <input type="checkbox" class="form-control" name="rw1-7"></input>
+                  </div>
+                </div>
+
+                <div class="form-group underline filename">
+                  <div class="col-sm-5">
+                    <label class="col-sm-6 control-label filename-text">No files added</label>
+                    <label class="col-sm-1 control-label filename-delete"></label>
+                    <div class="col-sm-5">
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
                   </div>
                 </div>
 
@@ -857,6 +879,7 @@
 
   $('.form-container').on('DOMMouseScroll mousewheel', get_rw1_page_position);
   $('.form-container').bind('swipemove',get_rw1_page_position);
+
 
 // get filename when file is attached and display it in the next form-group
   $('input[type=file]').change(function(e){
