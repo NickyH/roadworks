@@ -421,7 +421,7 @@
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-1"></input>
                   </div>
                 </div>
 
@@ -446,11 +446,11 @@
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-2"></input>
                   </div>
                 </div>
 
-                <div class="form-group underline">
+                <div class="form-group">
                   <div class="col-sm-5">
                     <label class="col-sm-7 control-label">Traffic Mngmt Plan</label>
                     <div class="col-sm-5">
@@ -459,13 +459,24 @@
                     </div>
                   </div>
                   <div class="col-sm-5">
-                    <label class="col-sm-5 control-label">Comments</label>
+                    <label class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <textarea class="form-control" rows="1"></textarea>
+                      <textarea class="form-control" rows="1" placeholder="Comments"></textarea>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-3"></input>
+                  </div>
+                </div>
+
+                <div class="form-group underline filename" id="new-attach">
+                  <div class="col-sm-5">
+                    <label class="col-sm-6 control-label filename-text">No files added</label>
+                    <label class="col-sm-1 control-label filename-delete"></label>
+                    <div class="col-sm-5">
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
                   </div>
                 </div>
 
@@ -487,7 +498,7 @@
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-4"></input>
                   </div>
                 </div>
 
@@ -502,13 +513,13 @@
                     </div>
                   </div>
                   <div class="col-sm-5">
-                    <label class="col-sm-5 control-label">Comments</label>
+                    <label class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <textarea class="form-control" rows="1"></textarea>
+                      <textarea class="form-control" rows="1" placeholder="Comments"></textarea>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-5"></input>
                   </div>
                 </div>
 
@@ -523,13 +534,13 @@
                     </div>
                   </div>
                   <div class="col-sm-5">
-                    <label class="col-sm-5 control-label">Comments</label>
+                    <label class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <textarea class="form-control" rows="1"></textarea>
+                      <textarea class="form-control" rows="1" placeholder="Comments"></textarea>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-6"></input>
                   </div>
                 </div>
 
@@ -542,13 +553,13 @@
                     </div>
                   </div>
                   <div class="col-sm-5">
-                    <label class="col-sm-5 control-label">Comments</label>
+                    <label class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <textarea class="form-control" rows="1"></textarea>
+                      <textarea class="form-control" rows="1" placeholder="Comments"></textarea>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-7"></input>
                   </div>
                 </div>
 
@@ -562,11 +573,11 @@
                   <div class="col-sm-5">
                     <label class="col-sm-5 control-label">Number of Houses</label>
                     <div class="col-sm-7">
-                      <input class="form-control"></input>
+                      <input class="form-control" placeholder="0"></input>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-8"></input>
                   </div>
                 </div>
 
@@ -578,13 +589,13 @@
                     </div>
                   </div>
                   <div class="col-sm-5">
-                    <label class="col-sm-5 control-label">Comments</label>
+                    <label class="col-sm-5 control-label"></label>
                     <div class="col-sm-7">
-                      <textarea class="form-control" rows="1"></textarea>
+                      <textarea class="form-control" rows="1" placeholder="Comments" ></textarea>
                     </div>
                   </div>
                   <div class="col-sm-2">
-                    <input type="checkbox" class="form-control"></input>
+                    <input type="checkbox" class="form-control" name="rw1-9"></input>
                   </div>
                 </div>
 
@@ -846,5 +857,17 @@
 
   $('.form-container').on('DOMMouseScroll mousewheel', get_rw1_page_position);
   $('.form-container').bind('swipemove',get_rw1_page_position);
+
+// get filename when file is attached and display it in the next form-group
+  $('input[type=file]').change(function(e){
+    $in=$(this);
+    var filename = $in.val().split('\\').pop();
+    if (filename === "No files added" || filename === "" ) {
+      filename = recentfile;
+    }
+    $in.parents('.form-group').next('.filename').children().find('.filename-text').html(filename);
+    $in.parents('.form-group').next('.filename').children().find('.filename-delete').html('x');
+    var recentfile = filename
+  });
 
 </script>
